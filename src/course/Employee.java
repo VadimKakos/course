@@ -8,7 +8,8 @@ public class Employee {
     private int division;
     private int salary;
 
-    public static int employeeCounter = 0;
+    //сделал счетчик приватным
+    private static int employeeCounter = 0;
 
     private int id;
 

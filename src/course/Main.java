@@ -32,22 +32,28 @@ public class Main {
         System.out.println(findMinSalary());
         System.out.println(findMaxSalary());
         System.out.println(averageSalary());
+        printNameEmployees(emp5);
+
     }
-//
-    public static void printEmployees() {
+//сделал методы приватными
+    private static void printEmployees() {
         for (int i = 0; i < employees.length; i++) {
             System.out.println(employees[i]);
         }
     }
+//Добавил метод вывода ФИО
+    private static void printNameEmployees(Employee employee) {
+        System.out.println("Имя: " + employee.getName() + " " + "Отчество:" + " " + employee.getMiddleName() + " " + "Фамилия: " + employee.getLastName());
+    }
 
-    public static int printSum() {
+    private static int printSum() {
         int sum = 0;
         for (int i = 0; i < employees.length; i++) {
             sum += employees[i].getSalary();
         }
         return sum;
     }
-    public static int findMinSalary() {
+    private static int findMinSalary() {
         int minSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (minSalary > employees[i].getSalary()) {
@@ -56,7 +62,7 @@ public class Main {
         }
         return minSalary;
     }
-    public static int findMaxSalary() {
+    private static int findMaxSalary() {
         int maxSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (maxSalary < employees[i].getSalary()) {
@@ -65,11 +71,10 @@ public class Main {
         }
         return maxSalary;
     }
-    public static int averageSalary() {
+    private static int averageSalary() {
         int average = 0;
         for (int i = 0; i < employees.length; i++) {
             average += employees[i].getSalary();
-
             }
         return average/employees.length;
     }
