@@ -4,9 +4,10 @@ import java.util.Arrays;
 
 public class Main {
     private static Employee[] employees = new Employee[10];
+
     public static void main(String[] args) {
 
-        Employee emp= new Employee("Иван", "Иванович", "Иванов", 3, 21000);
+        Employee emp = new Employee("Иван", "Иванович", "Иванов", 3, 21000);
         Employee emp1 = new Employee("Пётр", "Сергеевич", "Клабуков", 1, 19000);
         Employee emp2 = new Employee("Василий", "Сергеевич", "Мутко", 1, 25000);
         Employee emp3 = new Employee("Денис", "Владимирович", "Зуборев", 4, 29000);
@@ -32,18 +33,15 @@ public class Main {
         System.out.println(findMinSalary());
         System.out.println(findMaxSalary());
         System.out.println(averageSalary());
-        printNameEmployees(emp5);
+        printNameEmployees();
 
     }
-//сделал методы приватными
+
+    //сделал методы приватными
     private static void printEmployees() {
         for (int i = 0; i < employees.length; i++) {
             System.out.println(employees[i]);
         }
-    }
-//Добавил метод вывода ФИО
-    private static void printNameEmployees(Employee employee) {
-        System.out.println("Имя: " + employee.getName() + " " + "Отчество:" + " " + employee.getMiddleName() + " " + "Фамилия: " + employee.getLastName());
     }
 
     private static int printSum() {
@@ -53,6 +51,7 @@ public class Main {
         }
         return sum;
     }
+
     private static int findMinSalary() {
         int minSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
@@ -62,6 +61,7 @@ public class Main {
         }
         return minSalary;
     }
+
     private static int findMaxSalary() {
         int maxSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
@@ -71,13 +71,20 @@ public class Main {
         }
         return maxSalary;
     }
+
     private static int averageSalary() {
         int average = 0;
         for (int i = 0; i < employees.length; i++) {
             average += employees[i].getSalary();
-            }
-        return average/employees.length;
+        }
+        return average / employees.length;
+    }
+
+    //Добавил метод вывода ФИО
+    private static void printNameEmployees() {
+        for (int i = 0; i < employees.length; i++) {
+            System.out.println("Имя: " + employees[i].getName() + " " + "Отчество:" + " " + employees[i].getMiddleName() + " " + "Фамилия: " + employees[i].getLastName());
+        }
     }
 }
-
 
