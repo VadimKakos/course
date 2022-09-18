@@ -10,13 +10,13 @@ public class Main {
         Employee emp = new Employee("Иван", "Иванович", "Иванов", 3, 21000);
         Employee emp1 = new Employee("Пётр", "Сергеевич", "Клабуков", 1, 19000);
         Employee emp2 = new Employee("Василий", "Сергеевич", "Мутко", 1, 25000);
-        Employee emp3 = new Employee("Денис", "Владимирович", "Зуборев", 4, 29000);
+        Employee emp3 = new Employee("Денис", "Владимирович", "Зуборев", 4, 29789);
         Employee emp4 = new Employee("Софья", "Констатиновна", "Мутко", 1, 69000);
         Employee emp5 = new Employee("Анна", "Алексеевна", "Ницше", 3, 45000);
-        Employee emp6 = new Employee("Александр", "Алексеевич", "Притуляк", 2, 37000);
+        Employee emp6 = new Employee("Александр", "Алексеевич", "Притуляк", 2, 37765);
         Employee emp7 = new Employee("Александр", "Петрович", "Шолгин", 1, 11000);
         Employee emp8 = new Employee("Артур", "Захарович", "Липатов", 4, 17000);
-        Employee emp9 = new Employee("Альберт", "Александрович", "Грабурдо", 1, 50000);
+        Employee emp9 = new Employee("Альберт", "Александрович", "Грабурдо", 1, 50123);
 
         employees[0] = emp;
         employees[1] = emp1;
@@ -35,6 +35,7 @@ public class Main {
         System.out.println(averageSalary());
         printNameEmployees();
 
+
     }
 
     //сделал методы приватными
@@ -52,8 +53,8 @@ public class Main {
         return sum;
     }
 
-    private static int findMinSalary() {
-        int minSalary = employees[0].getSalary();
+    private static double findMinSalary() {
+        double minSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (minSalary > employees[i].getSalary()) {
                 minSalary = employees[i].getSalary();
@@ -62,8 +63,8 @@ public class Main {
         return minSalary;
     }
 
-    private static int findMaxSalary() {
-        int maxSalary = employees[0].getSalary();
+    private static double findMaxSalary() {
+        double maxSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (maxSalary < employees[i].getSalary()) {
                 maxSalary = employees[i].getSalary();
@@ -72,12 +73,12 @@ public class Main {
         return maxSalary;
     }
 
-    private static int averageSalary() {
-        int average = 0;
+    private static double averageSalary() {
+        double average = 0;
         for (int i = 0; i < employees.length; i++) {
             average += employees[i].getSalary();
         }
-        return average / employees.length;
+        return average / employees.length ;
     }
 
     //Добавил метод вывода ФИО

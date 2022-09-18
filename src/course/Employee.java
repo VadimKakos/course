@@ -6,14 +6,14 @@ public class Employee {
     private String lastName;
 
     private int division;
-    private int salary;
+    private double salary;
 
     //сделал счетчик приватным
     private static int employeeCounter = 0;
 
     private int id;
 
-    public Employee(String name, String middleName, String lastName, int division, int salary) {
+    public Employee(String name, String middleName, String lastName, int division, double salary) {
         this.name = name;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -38,7 +38,7 @@ public class Employee {
         return division;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
